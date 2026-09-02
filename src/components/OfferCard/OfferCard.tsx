@@ -1,12 +1,12 @@
-import { OfferCardProps } from './OfferCard.types';
+import {Link, generatePath} from 'react-router-dom';
+import {OfferCardProps} from './OfferCard.types';
+import {AppRoute} from '../../const/const.ts';
 
-export function OfferCard({ offer }: OfferCardProps): JSX.Element {
-
-  const { title, price, type, previewImage, isPremium } = offer;
-
+export function OfferCard({onMouseEnter, offer}: OfferCardProps): JSX.Element {
+  const {id, title, price, type, previewImage, isPremium} = offer;
 
   return (
-    <article className="cities__card place-card">
+    <article className="cities__card place-card" onMouseEnter={onMouseEnter}>
       {
         isPremium ?
           (
@@ -16,7 +16,7 @@ export function OfferCard({ offer }: OfferCardProps): JSX.Element {
           ) : ''
       }
       <div className="cities__image-wrapper place-card__image-wrapper">
-        <a href="#">
+        <Link to={generatePath(AppRoute.Offer, {id})}>
           <img
             className="place-card__image"
             src={previewImage}
@@ -24,7 +24,8 @@ export function OfferCard({ offer }: OfferCardProps): JSX.Element {
             height={200}
             alt="Place image"
           />
-        </a>
+        </Link>
+
       </div>
       <div className="place-card__info">
         <div className="place-card__price-wrapper">
@@ -34,19 +35,19 @@ export function OfferCard({ offer }: OfferCardProps): JSX.Element {
           </div>
           <button className="place-card__bookmark-button button" type="button">
             <svg className="place-card__bookmark-icon" width={18} height={19}>
-              <use xlinkHref="#icon-bookmark" />
+              <use xlinkHref="#icon-bookmark"/>
             </svg>
             <span className="visually-hidden">To bookmarks</span>
           </button>
         </div>
         <div className="place-card__rating rating">
           <div className="place-card__stars rating__stars">
-            <span style={{ width: '80%' }} />
+            <span style={{width: '80%'}}/>
             <span className="visually-hidden">Rating</span>
           </div>
         </div>
         <h2 className="place-card__name">
-          <a href="#"> {title} </a>
+          <Link to={generatePath(AppRoute.Offer, {id})}> {title} </Link>
         </h2>
         <p className="place-card__type">{type}</p>
       </div>

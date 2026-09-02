@@ -1,4 +1,4 @@
-export function Reviews() {
+export function Reviews(): JSX.Element {
   return (
     <section className='offer__reviews reviews'>
       <h2 className='reviews__title'>
