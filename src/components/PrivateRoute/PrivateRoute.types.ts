@@ -1,5 +1,6 @@
 import {AuthorizationStatusType} from '../../const/const.ts';
 
-export type LayoutProps = {
+export type PrivateRouteProps = {
   authStatus: AuthorizationStatusType;
-}
+  children: JSX.Element;
+};

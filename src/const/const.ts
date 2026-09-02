@@ -1,4 +1,4 @@
-import { City } from '../commonTypes/commonTypes';
+import {City} from '../commonTypes/commonTypes';
 
 export const cities: City[] = [
   {

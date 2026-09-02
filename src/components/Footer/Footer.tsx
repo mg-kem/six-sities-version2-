@@ -11,6 +11,5 @@ export function Footer(): JSX.Element {
         />
       </a>
     </footer>
-
   );
 }
