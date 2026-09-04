@@ -1,12 +1,15 @@
 import {Link, generatePath} from 'react-router-dom';
 import {OfferCardProps} from './OfferCard.types';
 import {AppRoute} from '../../const/const.ts';
+import {calculateRating} from '../../utils/utils.ts';
 
-export function OfferCard({onMouseEnter, offer}: OfferCardProps): JSX.Element {
-  const {id, title, price, type, previewImage, isPremium} = offer;
+
+export function OfferCard({offer, onMouseHover}: OfferCardProps): JSX.Element {
+  const {id, title, rating, price, type, previewImage, isPremium} = offer;
+
 
   return (
-    <article className="cities__card place-card" onMouseEnter={onMouseEnter}>
+    <article className="cities__card place-card" onMouseEnter={onMouseHover}>
       {
         isPremium ?
           (
@@ -25,7 +28,6 @@ export function OfferCard({onMouseEnter, offer}: OfferCardProps): JSX.Element {
             alt="Place image"
           />
         </Link>
-
       </div>
       <div className="place-card__info">
         <div className="place-card__price-wrapper">
@@ -42,7 +44,7 @@ export function OfferCard({onMouseEnter, offer}: OfferCardProps): JSX.Element {
         </div>
         <div className="place-card__rating rating">
           <div className="place-card__stars rating__stars">
-            <span style={{width: '80%'}}/>
+            <span style={{width: `${calculateRating(rating as number)}%`}}/>
             <span className="visually-hidden">Rating</span>
           </div>
         </div>

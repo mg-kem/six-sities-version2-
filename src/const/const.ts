@@ -1,30 +1,10 @@
-import {City} from '../commonTypes/commonTypes';
-
-export const cities: City[] = [
-  {
-    name: 'Paris',
-    active: false,
-  },
-  {
-    name: 'Cologne',
-    active: false,
-  },
-  {
-    name: 'Brussels',
-    active: false,
-  },
-  {
-    name: 'Amsterdam',
-    active: true,
-  },
-  {
-    name: 'Hamburg',
-    active: false,
-  },
-  {
-    name: 'Dusseldorf',
-    active: false,
-  },
+export const cities: string[] = [
+  'Paris',
+  'Cologne',
+  'Brussels',
+  'Amsterdam',
+  'Hamburg',
+  'Dusseldorf',
 ];
 
 export const AppRoute = {
