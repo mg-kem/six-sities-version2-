@@ -16,7 +16,7 @@ export function OffersWrapper({offers}: OfferWrapperProps) {
     <div className="cities__places-container container">
       {<Offers offers={offers} onMouseHover={handleMouseHover}/>}
       <div className="cities__right-section">
-        {<Map offers={offers}/>}
+        {<Map offers={offers} activeOffer={activeOffer}/>}
       </div>
     </div>
   );
